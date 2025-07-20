@@ -23,7 +23,6 @@ manifest:
     - name: zmk-keyboards-artifact-creatives
       remote: duockeny
       revision: main
-      import: west.yml
   self:
     path: config
 ```

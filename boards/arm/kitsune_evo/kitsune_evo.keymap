@@ -1,4 +1,3 @@
-#undef ZMK_BEHAVIORS_KEEP_ALL 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -26,8 +25,8 @@
 
         2 {
             bindings = <
-                &none  &none  &none  &none  &none  &none  &none  &kp HOME &kp UP   &kp PG_UP &kp BSLH &kp DEL
-                &none  &none  &none  &none  &none  &none  &none  &kp LEFT &kp DOWN &kp RIGHT &kp LBKT &kp RBKT
+                &trans &none  &none  &none  &none  &none  &none  &kp HOME &kp UP   &kp PG_UP &kp BSLH &kp DEL
+                &trans &none  &none  &none  &none  &none  &none  &kp LEFT &kp DOWN &kp RIGHT &kp LBKT &kp RBKT
                 &trans &none  &none  &none  &none  &none  &none  &kp END  &none    &kp PG_DN &none    &trans
                 &trans &trans &trans &mo 3         &trans        &trans   &trans             &trans   &trans
             >;
@@ -36,7 +35,7 @@
         3 {
             bindings = <
                 &bootloader &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp F11 &kp F12
-                &none       &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
+                &trans      &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
                 &trans      &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   &trans
                 &trans      &trans &trans &trans        &trans        &trans &trans        &trans  &trans
             >;
@@ -44,8 +43,8 @@
 
         4 {
             bindings = <
-                &none  &none  &none  &none  &none &none  &none &none      &kp C_VOL_UP &kp C_BRI_UP &kp C_PP &kp DEL
-                &none  &none  &none  &none  &none &none  &none &none      &kp C_VOL_DN &kp C_BRI_DN &none    &kp ENTER
+                &trans &none  &none  &none  &none &none  &none &none      &kp C_VOL_UP &kp C_BRI_UP &kp C_PP &kp DEL
+                &trans &none  &none  &none  &none &none  &none &none      &kp C_VOL_DN &kp C_BRI_DN &none    &kp ENTER
                 &trans &none  &none  &none  &none &none  &none &kp C_MUTE &kp C_PREV   &kp C_NEXT   &none    &trans
                 &trans &trans &trans &trans       &trans       &trans     &trans                    &trans   &trans
             >;

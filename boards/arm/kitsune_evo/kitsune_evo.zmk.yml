@@ -1,0 +1,12 @@
+file_format: "1"
+id: kitsune_evo
+name: Kitsune EVO
+type: board
+arch: arm
+features:
+  - keys
+  - studio
+outputs:
+  - usb
+  - ble
+url: ~

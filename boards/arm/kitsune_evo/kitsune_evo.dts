@@ -1,5 +1,5 @@
 /dts-v1/;
-#include "kitsune.dtsi"
+#include "kitsune_evo.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <layouts/artifact_creatives/kitsune/kitsune_default.dtsi>
 #include <layouts/artifact_creatives/kitsune/kitsune_ckl.dtsi>

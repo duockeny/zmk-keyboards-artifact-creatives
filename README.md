@@ -13,7 +13,7 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: artifactcreatives
+    - name: duockeny
       url-base: https://github.com/duockeny
   projects:
     - name: zmk
@@ -21,7 +21,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-keyboards-artifact-creatives
-      remote: artifactcreatives
+      remote: duockeny
       revision: main
       import: west.yml
   self:

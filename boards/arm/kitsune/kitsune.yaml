@@ -1,0 +1,11 @@
+identifier: kitsune
+name: Kitsune
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 40
+supported:
+  - switches

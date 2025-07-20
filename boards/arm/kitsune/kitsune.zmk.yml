@@ -1,0 +1,11 @@
+file_format: "1"
+id: kitsune
+name: Kitsune
+type: board
+arch: arm
+features:
+  - keys
+  - studio
+outputs:
+  - usb
+url: ~

@@ -24,8 +24,8 @@
 
         row-gpios
             = <&gpiob 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpiob 14  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpiob 13  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpiob 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpiob 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpiob 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         col-gpios

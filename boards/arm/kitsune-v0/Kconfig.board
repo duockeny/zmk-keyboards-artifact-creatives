@@ -1,3 +1,0 @@
-config BOARD_KITSUNE_V0
-    bool "Kitsune V0 Keyboard"
-    depends on SOC_STM32F072XB

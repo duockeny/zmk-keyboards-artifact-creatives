@@ -1,6 +1,7 @@
 /dts-v1/;
 #include <st/f0/stm32f072Xb.dtsi>
 #include <st/f0/stm32f072c(8-b)tx-pinctrl.dtsi>
+#include <dt-bindings/led/led.h>
 
 / {
     chosen {
@@ -110,6 +111,8 @@ zephyr_udc0: &usb {
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
     };
 };

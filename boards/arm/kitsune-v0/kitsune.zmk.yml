@@ -1,6 +1,6 @@
 file_format: "1"
-id: kitsune
-name: Kitsune
+id: kitsune_v0
+name: Kitsune V0
 type: board
 arch: arm
 features:

@@ -1,5 +1,5 @@
-identifier: kitsune
-name: Kitsune
+identifier: kitsune_v0
+name: Kitsune V0
 type: mcu
 arch: arm
 toolchain:

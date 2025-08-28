@@ -8,7 +8,7 @@
 #include <layouts/artifact_creatives/kitsune/kitsune_hhkb.dtsi>
 
 / {
-    model = "Kitsune";
+    model = "Kitsune V0";
     compatible = "kitsune", "st,stm32f072";
 
     chosen {

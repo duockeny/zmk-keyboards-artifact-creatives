@@ -1,5 +1,8 @@
 if BOARD_KITSUNE
 
+config BOARD
+    default "kitsune"
+
 config ZMK_KEYBOARD_NAME
     default "Kitsune"
 

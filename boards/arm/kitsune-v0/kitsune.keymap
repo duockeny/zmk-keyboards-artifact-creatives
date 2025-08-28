@@ -1,3 +1,4 @@
+#undef ZMK_BEHAVIORS_KEEP_ALL 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -43,10 +44,10 @@
 
         4 {
             bindings = <
-                &none  &none  &none  &none  &none &none  &none &kp C_BRI_UP &kp C_VOL_UP &none      &kp C_PP &kp DEL
-                &none  &none  &none  &none  &none &none  &none &kp C_BRI_DN &kp C_VOL_DN &none      &none    &kp ENTER
-                &trans &none  &none  &none  &none &none  &none &kp C_MUTE   &kp C_PREV   &kp C_NEXT &none    &trans
-                &trans &trans &trans &trans       &none        &trans       &trans                  &trans   &trans
+                &none  &none  &none  &none  &none &none  &none &kp C_BRI_UP &kp C_VOL_UP &kp C_PP   &none  &kp DEL
+                &none  &none  &none  &none  &none &none  &none &kp C_BRI_DN &kp C_VOL_DN &none      &none  &kp ENTER
+                &trans &none  &none  &none  &none &none  &none &kp C_MUTE   &kp C_PREV   &kp C_NEXT &none  &trans
+                &trans &trans &trans &trans       &none        &trans       &trans                  &trans &trans
             >;
         };
 

@@ -23,24 +23,24 @@
         diode-direction = "col2row";
 
         row-gpios
-            = <&gpioa 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpioa 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpioa 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpiob 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpiob 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpiob 14  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpiob 13  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpiob 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
         col-gpios
-            = <&gpioa 3  GPIO_ACTIVE_HIGH>
-            , <&gpioa 4  GPIO_ACTIVE_HIGH>
-            , <&gpioa 5  GPIO_ACTIVE_HIGH>
-            , <&gpioa 6  GPIO_ACTIVE_HIGH>
-            , <&gpioa 7  GPIO_ACTIVE_HIGH>
+            = <&gpiob 11 GPIO_ACTIVE_HIGH>
+            , <&gpiob 10 GPIO_ACTIVE_HIGH>
+            , <&gpiob 2  GPIO_ACTIVE_HIGH>
+            , <&gpiob 1  GPIO_ACTIVE_HIGH>
             , <&gpiob 0  GPIO_ACTIVE_HIGH>
-            , <&gpioa 14 GPIO_ACTIVE_HIGH>
-            , <&gpioa 15 GPIO_ACTIVE_HIGH>
-            , <&gpiob 3  GPIO_ACTIVE_HIGH>
-            , <&gpiob 4  GPIO_ACTIVE_HIGH>
-            , <&gpiob 5  GPIO_ACTIVE_HIGH>
-            , <&gpiob 6  GPIO_ACTIVE_HIGH>
+            , <&gpioa 7  GPIO_ACTIVE_HIGH>
+            , <&gpioa 6  GPIO_ACTIVE_HIGH>
+            , <&gpioa 5  GPIO_ACTIVE_HIGH>
+            , <&gpioa 4  GPIO_ACTIVE_HIGH>
+            , <&gpioa 3  GPIO_ACTIVE_HIGH>
+            , <&gpiob 9  GPIO_ACTIVE_HIGH>
+            , <&gpiob 8  GPIO_ACTIVE_HIGH>
             ;
     };
 
@@ -96,6 +96,7 @@ RC(3,0)         RC(3,2) RC(3,3)         RC(3,5)         RC(3,7) RC(3,8)         
 &layout_kitsune_wkl {
     transform = <&wkl_transform>;
 };
+
 &layout_kitsune_hhkb {
     transform = <&ckl_transform>;
 };

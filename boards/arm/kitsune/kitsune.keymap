@@ -45,7 +45,7 @@
         4 {
             bindings = <
                 &none  &none  &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG &none &none &kp C_BRI_UP &kp C_VOL_UP &kp C_PP   &none  &kp DEL
-                &none  &none  &rgb_ug RGB_HUD &rgb_ug RGB_BRD &none           &none &none &kp C_BRI_DN &kp C_VOL_DN &none      &none  &kp ENTER
+                &none  &none  &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF &none &none &kp C_BRI_DN &kp C_VOL_DN &none      &none  &kp ENTER
                 &trans &none  &none           &none           &none           &none &none &kp C_MUTE   &kp C_PREV   &kp C_NEXT &none  &trans
                 &trans &trans &trans          &mo 5                           &none       &mo 6        &trans                  &trans &trans
             >;

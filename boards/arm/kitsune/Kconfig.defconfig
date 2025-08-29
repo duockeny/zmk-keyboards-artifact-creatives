@@ -6,8 +6,4 @@ config BOARD
 config ZMK_KEYBOARD_NAME
     default "Kitsune"
 
-config ZMK_RGB_UNDERGLOW
-    select SPI
-    select WS2812_STRIP
-
 endif # BOARD_KITSUNE

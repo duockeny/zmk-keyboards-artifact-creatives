@@ -9,6 +9,11 @@
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
     };
+    
+    EXT_POWER {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpiob 4 GPIO_ACTIVE_LOW>;
+    };
 };
 
 &spi1 {

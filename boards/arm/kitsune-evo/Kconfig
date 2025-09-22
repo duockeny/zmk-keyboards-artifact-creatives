@@ -7,5 +7,5 @@ config BOARD_ENABLE_DCDC
 config BOARD_ENABLE_DCDC_HV
     bool "Enable high voltage DCDC mode"
     select SOC_DCDC_NRF52X_HV
-    default y
+    default n
     depends on BOARD_KITSUNE_EVO

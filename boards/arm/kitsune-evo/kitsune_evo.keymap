@@ -14,7 +14,7 @@
     macros {
         // Select, then output to BT profile
         bt_con: bt_con {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>
@@ -25,7 +25,7 @@
 
         // Select, then clear, then output to BT profile
         bt_clr: bt_clr {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>

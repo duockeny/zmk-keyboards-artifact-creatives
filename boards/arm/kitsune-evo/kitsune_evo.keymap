@@ -15,6 +15,8 @@
         // Select, then output to BT profile
         bt_con: bt_con {
             compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <40>;
+            tap-ms = <40>;
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>
@@ -26,6 +28,8 @@
         // Select, then clear, then output to BT profile
         bt_clr: bt_clr {
             compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <40>;
+            tap-ms = <40>;
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>

@@ -12,10 +12,11 @@
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
     };
-    
+
+    // Node name must match original "EXT_POWER" label to preserve user settings.
     EXT_POWER {
         compatible = "zmk,ext-power-generic";
-        control-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
+        control-gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
     };
 
     vbatt: vbatt {
@@ -37,7 +38,7 @@
         compatible = "zmk,gpio-key-wakeup-trigger";
         trigger = <&soft_off_gpio_key>;
         wakeup-source;
-        extra-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>; // output pin of key "B"
+        extra-gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>; // output pin of key "B"
     };
 
     soft_off_wakers {

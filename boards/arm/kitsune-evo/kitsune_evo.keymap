@@ -4,33 +4,46 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define BT_FN(profile) &bt_fn profile profile // Macro to apply bt_fn to the same profile
+
 &soft_off {
-    hold-time-ms = <3000>; // Only turn off it the key is held for 3 seconds or longer.
+    hold-time-ms = <1000>; // Only turn off when held for 3 seconds or longer
 };
 
 / {
-
     macros {
-        // Select, then clear selected BT profile
-        bt_clr: bt_clear {
+        // Select, then output to BT profile
+        bt_con: bt_con {
             compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
             bindings
                 = <&macro_param_1to2>
                 , <&bt BT_SEL MACRO_PLACEHOLDER>
-                , <&bt BT_CLR
+                , <&out OUT_BLE>
+                ;
+        };
+
+        // Select, then clear, then output to BT profile
+        bt_clr: bt_clr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_param_1to2>
+                , <&bt BT_SEL MACRO_PLACEHOLDER>
+                , <&bt BT_CLR>
+                , <&out OUT_BLE>
                 ;
         };
     };
 
     behaviors {
-        // Select BT profile on tap, clear selected BT profile on hold
+        // TAP: Connect to selected BT profile | HOLD: Forget selected BT profile and put into pairing mode
         bt_fn: bt_fn {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&bt_clr>, <&bt>;
+            tapping-term-ms = <1000>;
+            bindings = <&bt_clr>, <&bt_con>;
         };
     };
 
@@ -66,10 +79,10 @@
 
         3 {
             bindings = <
-                &bootloader &none             &none             &none             &none  &none        &none  &none  &none  &none  &kp F11 &kp F12
-                &none       &kp F1            &kp F2            &kp F3            &kp F4 &kp F5       &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
-                &trans      &bt_fn 0 BT_SEL 0 &bt_fn 1 BT_SEL 1 &bt_fn 2 BT_SEL 2 &none  &soft_off    &none  &none  &none  &none  &none   &trans
-                &trans      &trans            &trans            &trans                   &out OUT_TOG        &trans &trans        &mo 7   &trans
+                &bootloader &none    &none    &none    &none  &none        &none  &none  &none  &none  &kp F11 &kp F12
+                &none       &kp F1   &kp F2   &kp F3   &kp F4 &kp F5       &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
+                &trans      BT_FN(0) BT_FN(1) BT_FN(2) &none  &soft_off    &none  &none  &none  &none  &none   &trans
+                &trans      &trans   &trans   &trans          &out OUT_USB        &trans &trans        &mo 7   &trans
             >;
         };
 

@@ -1,7 +1,7 @@
 if BOARD_KITSUNE_EVO
 
 config BOARD
-    default "kisune_evo"
+    default "kitsune_evo"
 
 config ZMK_KEYBOARD_NAME
     default "Kitsune EVO"

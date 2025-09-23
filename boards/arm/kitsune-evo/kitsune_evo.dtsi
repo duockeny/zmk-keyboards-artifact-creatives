@@ -2,8 +2,6 @@
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/led/led.h>
 
-/* TO-DO: Add deep sleep and wake up source */
-
 / {
     chosen {
         zmk,battery = &vbatt;

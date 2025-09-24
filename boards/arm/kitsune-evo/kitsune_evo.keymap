@@ -4,8 +4,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define BT_FN(profile) &bt_fn profile profile // Macro to apply bt_fn to the same profile
-
 &soft_off {
     hold-time-ms = <1000>; // Only turn off when held for 1 second or longer
 };
@@ -13,7 +11,7 @@
 / {
     macros {
         // Select, then output to BT profile
-        bt_con: bt_con {
+        bt_sel: bt_sel {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <40>;
             tap-ms = <40>;
@@ -41,13 +39,39 @@
     };
 
     behaviors {
-        // Connect to selected BT profile on tap, forget selected BT profile and put into pairing mode on hold for 1 second or longer
-        bt_fn: bt_fn {
+        // Connect on tap, forget and put into pairing mode on hold, for selected BT profile
+        bt_selclr: bt_selclr {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <1000>;
-            bindings = <&bt_clr>, <&bt_con>;
+            tapping-term-ms = <1000>; // Only register when held for 1 second or longer
+            bindings = <&bt_clr>, <&bt_sel>;
+        };
+
+#define BT_SELCLR(profile) &bt_selclr profile profile // Macro to apply bt_selclr to the same profile
+
+        // Connect on tap, disconnect on double tap, forget and put into pairing mode on hold, for BT profile 0
+        bt0: bt0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <BT_SELCLR(0)>, <&bt BT_DISC 0>;
+        };
+
+        // Connect on tap, disconnect on double tap, forget and put into pairing mode on hold, for BT profile 1
+        bt1: bt1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <BT_SELCLR(1)>, <&bt BT_DISC 1>;
+        };
+
+        // Connect on tap, disconnect on double tap, forget and put into pairing mode on hold, for BT profile 2
+        bt2: bt2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <BT_SELCLR(2)>, <&bt BT_DISC 2>;
         };
     };
 
@@ -83,10 +107,10 @@
 
         3 {
             bindings = <
-                &bootloader &none    &none    &none    &none  &none        &none  &none  &none  &none  &kp F11 &kp F12
-                &none       &kp F1   &kp F2   &kp F3   &kp F4 &kp F5       &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
-                &trans      BT_FN(0) BT_FN(1) BT_FN(2) &none  &soft_off    &none  &none  &none  &none  &none   &trans
-                &trans      &trans   &trans   &trans          &out OUT_USB        &trans &trans        &mo 7   &trans
+                &bootloader &none  &none  &none  &none  &none        &none  &none  &none  &none  &kp F11 &kp F12
+                &none       &kp F1 &kp F2 &kp F3 &kp F4 &kp F5       &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &studio_unlock
+                &trans      &bt0   &bt1   &bt2   &none  &soft_off    &none  &none  &none  &none  &none   &trans
+                &trans      &trans &trans &trans        &out OUT_USB        &trans &trans        &mo 7   &trans
             >;
         };
 
